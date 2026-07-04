@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LimitSound — Headphone safety for your Mac</title>
+<meta name="description" content="LimitSound caps your Mac's output volume so your AirPods and Bluetooth headphones never exceed a safe dB level. 3-day free trial, $6.99 to keep.">
+<link rel="icon" href="icon.png">
+<style>
+  :root {
+    --bg: #ffffff; --fg: #1d1d1f; --muted: #6e6e73;
+    --card: #f5f5f7; --accent: #0a6cf5; --accent-fg: #ffffff;
+    --border: #e5e5ea; --code: #f0f0f2;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0d0d0f; --fg: #f5f5f7; --muted: #98989d;
+      --card: #1b1b1e; --accent: #2f81f7; --accent-fg: #ffffff;
+      --border: #2c2c2e; --code: #202024;
+    }
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+    background: var(--bg); color: var(--fg); line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 680px; margin: 0 auto; padding: 0 24px; }
+  header { text-align: center; padding: 72px 0 48px; }
+  .icon { width: 128px; height: 128px; border-radius: 28px;
+          box-shadow: 0 12px 40px rgba(0,0,0,.18); }
+  h1 { font-size: 44px; font-weight: 700; letter-spacing: -.02em; margin-top: 24px; }
+  .tagline { font-size: 21px; color: var(--muted); margin-top: 8px; }
+  .btn {
+    display: inline-block; margin-top: 28px; padding: 14px 32px;
+    background: var(--accent); color: var(--accent-fg);
+    border-radius: 12px; font-size: 17px; font-weight: 600; text-decoration: none;
+    transition: transform .12s ease, opacity .12s ease;
+  }
+  .btn:hover { transform: scale(1.03); opacity: .92; }
+  .btn-secondary {
+    background: var(--card); color: var(--fg);
+    border: 1px solid var(--border); margin-left: 10px;
+  }
+  .sub { font-size: 13px; color: var(--muted); margin-top: 10px; }
+  .sub a { color: var(--muted); }
+  section { padding: 32px 0; }
+  h2 { font-size: 26px; font-weight: 700; letter-spacing: -.01em; margin-bottom: 16px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
+  .card { background: var(--card); border-radius: 14px; padding: 18px; }
+  .card h3 { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+  .card p { font-size: 13.5px; color: var(--muted); }
+  .steps { counter-reset: step; }
+  .step { display: flex; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--border); }
+  .step:last-child { border-bottom: none; }
+  .step::before {
+    counter-increment: step; content: counter(step);
+    flex: 0 0 28px; height: 28px; border-radius: 50%;
+    background: var(--accent); color: var(--accent-fg);
+    font-size: 14px; font-weight: 700; display: flex;
+    align-items: center; justify-content: center; margin-top: 2px;
+  }
+  .step p { font-size: 15px; }
+  .step .why { font-size: 13px; color: var(--muted); }
+  code {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    background: var(--code); border-radius: 6px; padding: 2px 7px; font-size: 13px;
+  }
+  pre {
+    background: var(--code); border-radius: 10px; padding: 14px 16px;
+    overflow-x: auto; margin-top: 10px;
+  }
+  pre code { background: none; padding: 0; }
+  .note {
+    background: var(--card); border-radius: 14px; padding: 16px 18px;
+    font-size: 13.5px; color: var(--muted); margin-top: 16px;
+  }
+  footer {
+    text-align: center; padding: 48px 0 56px;
+    font-size: 13px; color: var(--muted);
+  }
+  footer a { color: var(--muted); }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header>
+    <img class="icon" src="icon.png" alt="LimitSound icon" width="128" height="128">
+    <h1>LimitSound</h1>
+    <p class="tagline">Headphone safety for your Mac.<br>Set a dB limit — your ears will thank you.</p>
+    <div>
+      <a class="btn" href="https://limitsound.gumroad.com/l/limitsound">
+        Buy — $6.99
+      </a>
+      <a class="btn btn-secondary" href="https://github.com/limitsound/limitsound/releases/latest/download/LimitSound.dmg">
+        Free 3-day trial
+      </a>
+    </div>
+    <p class="sub">One-time purchase, free updates · macOS 13+ · Apple Silicon &amp; Intel ·
+      <a href="https://github.com/limitsound/limitsound">GitHub</a></p>
+  </header>
+
+  <section>
+    <h2>What it does</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>🎧 Protects automatically</h3>
+        <p>Detects when your AirPods (or any Bluetooth headphones) connect and caps the volume to your chosen dB ceiling.</p>
+      </div>
+      <div class="card">
+        <h3>⚡ Instant &amp; invisible</h3>
+        <p>Raise the volume past the limit and it snaps right back — event-driven, zero background CPU, no microphone access.</p>
+      </div>
+      <div class="card">
+        <h3>🎚 75–100 dB in 5 dB steps</h3>
+        <p>The same scale iOS Headphone Safety uses. Pick 85 dB and forget about it.</p>
+      </div>
+      <div class="card">
+        <h3>🔄 Free updates forever</h3>
+        <p>Pay once, own it. Updates arrive in-app, one click, signed and secure.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="install">
+    <h2>Installing — read this first</h2>
+    <p style="color: var(--muted); font-size: 15px; margin-bottom: 12px;">
+      LimitSound is an independent app distributed outside the App Store, so the first
+      launch needs one extra step. This is normal for indie Mac apps.
+    </p>
+    <div class="steps">
+      <div class="step"><div>
+        <p>Open the downloaded <code>LimitSound.dmg</code> and drag <strong>LimitSound</strong> into <strong>Applications</strong>.</p>
+      </div></div>
+      <div class="step"><div>
+        <p>Double-click LimitSound. macOS will say it <em>"could not verify the app is free of malware"</em> — close that dialog.</p>
+        <p class="why">macOS shows this for every app that isn't registered with Apple's paid developer program.</p>
+      </div></div>
+      <div class="step"><div>
+        <p>Open <strong>System Settings → Privacy &amp; Security</strong>, scroll down, and click <strong>"Open Anyway"</strong>. Confirm with your password.</p>
+        <p class="why">You only do this once — updates install automatically afterwards.</p>
+      </div></div>
+      <div class="step"><div>
+        <p>Look for the <strong>headphones icon</strong> in your menu bar. Connect your AirPods and you're protected.</p>
+      </div></div>
+    </div>
+    <div class="note">
+      <strong>Prefer the Terminal?</strong> This one-liner skips step 2–3:
+      <pre><code>xattr -d com.apple.quarantine /Applications/LimitSound.app</code></pre>
+    </div>
+  </section>
+
+  <section>
+    <h2>Pricing</h2>
+    <p style="font-size: 15px; color: var(--muted);">
+      Try everything free for 3 days — no account, no card. Keep it for a one-time
+      <strong style="color: var(--fg);">$6.99</strong>: you get a license key by email
+      right after purchase, paste it into the app, done. Free updates forever, no
+      subscription.
+    </p>
+  </section>
+
+  <section>
+    <h2>Honest fine print</h2>
+    <p style="font-size: 15px; color: var(--muted);">
+      macOS doesn't expose the true sound-pressure level of headphones to third-party
+      apps — only Apple can do that. LimitSound's dB scale is a calibrated
+      approximation anchored at ≈100 dB for full volume: the 5 dB steps are accurate
+      relative to each other, while the absolute level depends on your headphone
+      model, the track, and fit. It's a strong safety net, not a lab instrument.
+    </p>
+  </section>
+
+  <footer>
+    <p>© 2026 LimitSound ·
+      <a href="https://github.com/limitsound/limitsound">GitHub</a> ·
+      <a href="https://github.com/limitsound/limitsound/issues">Report an issue</a></p>
+  </footer>
+
+</div>
+
+</body>
+</html>
