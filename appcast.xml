@@ -3,12 +3,12 @@
     <channel>
         <title>LimitSound</title>
         <item>
-            <title>1.0.0</title>
-            <pubDate>Sat, 04 Jul 2026 13:11:22 -0300</pubDate>
-            <sparkle:version>1</sparkle:version>
-            <sparkle:shortVersionString>1.0.0</sparkle:shortVersionString>
+            <title>1.0.1</title>
+            <pubDate>Fri, 17 Jul 2026 21:46:58 -0300</pubDate>
+            <sparkle:version>2</sparkle:version>
+            <sparkle:shortVersionString>1.0.1</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://github.com/limitsound/limitsound/releases/latest/download/LimitSound.dmg" length="1350468" type="application/octet-stream" sparkle:edSignature="QLYyE/hQt8EPgUReHZQ82r1jSFpybaUkpwAgBAL/7gAsBpv5elUZz5x8kBF8QBaJiIQXmRB9OcXp9OjKv76EDQ=="/>
+            <enclosure url="https://github.com/limitsound/limitsound/releases/latest/download/LimitSound.dmg" length="1337123" type="application/octet-stream" sparkle:edSignature="WYMgVVRaQs3KebfkAsbJOkNb+9rmPnN93G3+e0EGndq863P+ShKlM/mDOLak5zDByonhQJjI2J55ezj0LF9MCQ=="/>
         </item>
     </channel>
 </rss>
